@@ -9,7 +9,7 @@
 const countProps = function (obj) {
   "use strict";
   // Write code under this line
-  Object.keys(countProps).length;
+  return Object.keys(obj).length;
 };
 
 console.log(countProps({})); // 0
