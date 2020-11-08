@@ -90,15 +90,20 @@ const account = {
    * определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
-    let sum = 0;
+    // let sum = 0;
 
-    this.transactions.forEach((item) => {
-      if (item.type === type) {
-        sum += item.amount;
-      }
-    });
+    // this.transactions.forEach((item) => {
+    //   if (item.type === type) {
+    //     sum += item.amount;
+    //   }
+    // });
 
-    return sum;
+    // return sum;
+
+    return this.transactions.reduce(
+      (acc, item) => (item.type === type ? acc + item.amount : acc),
+      0
+    );
   },
 };
 
